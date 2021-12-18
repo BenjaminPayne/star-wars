@@ -1,0 +1,4 @@
+<div *ngFor="let planet of planets">
+  <app-planet-info [planet]="planet"></app-planet-info>
+  <button (click)="select(planet)">View More</button>
+</div>

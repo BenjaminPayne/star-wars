@@ -1,0 +1,13 @@
+<h1> Star Wars Planets </h1>
+
+<ng-container *ngIf="(pagedPlanets$ | async) as pagedPlanets; else loading">
+  <app-planet-list [planets]="pagedPlanets.results" (selected)="navigateTo($event)"></app-planet-list>
+  <div>
+    <button *ngIf="pagedPlanets.previous" (click)="previous(pagedPlanets.previous)">Previous</button>
+    <button *ngIf="pagedPlanets.next" (click)="next(pagedPlanets.next)">Next</button>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <div> Loading planets...</div>
+</ng-template>

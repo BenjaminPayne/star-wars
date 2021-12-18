@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  baseStarWarsApiUrl: 'swapi.py4e.com/api/'
 };

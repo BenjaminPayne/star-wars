@@ -1,0 +1,23 @@
+<ng-container *ngIf="(planet$ | async) as planet; else loadingPlanet">
+  <div>{{planet.name}} - {{planet.population}}</div>
+
+  <div class="residents" *ngFor="let residentUrl of planet.residents">
+    <ng-container *ngIf="residentUrl | person | async as person; else loadingPerson">
+      <app-person-overview [person]="person" (selected)="showPersonDetails($event)"></app-person-overview>
+    </ng-container>
+  </div>
+
+</ng-container>
+
+<div *ngIf="detailedPerson$ | async as person">
+  <app-person-info [person]="person"></app-person-info>
+</div>
+
+<ng-template #loadingPlanet>
+  <div> Loading Planet...</div>
+</ng-template>
+
+
+<ng-template #loadingPerson>
+  <div> Loading Planet...</div>
+</ng-template>
