@@ -1,10 +1,41 @@
 <ng-container *ngIf="(planet$ | async) as planet; else loadingPlanet">
-  <div>{{planet.name}} - {{planet.population}}</div>
 
-  <div class="residents" *ngFor="let residentUrl of planet.residents">
-    <ng-container *ngIf="residentUrl | person | async as person; else loadingPerson">
-      <app-person-overview [person]="person" (selected)="showPersonDetails($event)"></app-person-overview>
-    </ng-container>
+  <div class="hero">
+    <img src="/assets/images/planet-banner.jpg" alt="Photo by Teo Lê on Unsplash" />
+  </div>
+  <h1 class="title"> {{planet.name}}</h1>
+
+  <div class="details">
+
+    <div>
+      <h2 class="details__title">Planet Details</h2>
+      <div class="list">
+        <app-property-display description='Rotation Period' [value]="planet.rotation_period"></app-property-display>
+        <app-property-display description='Orbital Period' [value]="planet.orbital_period"></app-property-display>
+        <app-property-display description='Diameter' [value]="planet.diameter"></app-property-display>
+        <app-property-display description='Climate' [value]="planet.climate | titlecase"></app-property-display>
+        <app-property-display description='Gravity' [value]="planet.gravity | titlecase"></app-property-display>
+        <app-property-display description='Terrain' [value]="planet.terrain | titlecase"></app-property-display>
+        <app-property-display description='Surface Water' [value]="planet.surface_water"></app-property-display>
+        <app-property-display description='Population (m)' [value]="planet.population | population">
+        </app-property-display>
+      </div>
+    </div>
+
+    <div *ngIf="planet.residents.length > 0">
+      <h2 class="details__title">Residents</h2>
+      <div class="list">
+        <ng-container *ngFor="let residentUrl of planet.residents">
+          <ng-container *ngIf="residentUrl | person | async as person; else loadingPerson">
+            <app-card>
+              <app-person-overview class="person-overview" [person]="person" (selected)="showPersonDetails($event)">
+              </app-person-overview>
+            </app-card>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+
   </div>
 
 </ng-container>
@@ -14,9 +45,8 @@
 </div>
 
 <ng-template #loadingPlanet>
-  <div> Loading Planet...</div>
+  <h1 class="title"> Star Wars Planets </h1>
 </ng-template>
-
 
 <ng-template #loadingPerson>
   <div> Loading Planet...</div>

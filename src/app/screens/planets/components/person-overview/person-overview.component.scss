@@ -1,0 +1,16 @@
+@use "mixins";
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.placeholder {
+  background-color: grey;
+  height: 10em;
+}
+
+.title {
+  padding: 1em;
+  @include mixins.title;
+}

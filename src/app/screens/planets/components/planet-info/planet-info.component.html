@@ -1,23 +1,13 @@
 <div class="placeholder"></div>
-<h2 class="title">{{planet.name}}</h2>
 
-<div class="information">
-  <div class="entry">
-    <p class="entry__value">{{planet.residents?.length}}</p>
-    <p class="entry__key">Residents</p>
+<div class="planet">
+
+  <h2 class="title">{{planet.name}}</h2>
+
+  <div class="information">
+    <app-property-display description="Residents" [value]="planet.residents?.length"></app-property-display>
+    <app-property-display description="Population (m)" [value]="planet.population | population"></app-property-display>
+    <app-property-display description="Orbital Period" [value]="planet.orbital_period | titlecase"></app-property-display>
   </div>
 
-  <div class="entry">
-    <p class="entry__value" [title]="planet.population">{{planet.population | population}}</p>
-    <div class="entry__key">
-      <p>Population (m)</p>
-    </div>
-  </div>
-
-  <div class="entry">
-    <p class="entry__value">{{planet.orbital_period | titlecase}}</p>
-    <div class="entry__key">
-      <p>Orbital Period</p>
-    </div>
-  </div>
 </div>

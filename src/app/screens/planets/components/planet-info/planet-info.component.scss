@@ -4,7 +4,6 @@
 :host {
   display: flex;
   flex-direction: column;
-  padding: 1em;
   background-color: colours.$white;
 }
 
@@ -12,6 +11,12 @@
   background-color: grey;
   height: 200px;
   width: 100%;
+}
+
+.planet {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
 }
 
 .title {

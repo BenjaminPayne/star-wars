@@ -1,3 +1,3 @@
-<div class="card" (click)="select(planet)" *ngFor="let planet of planets">
+<app-card (click)="select(planet)" *ngFor="let planet of planets">
   <app-planet-info [planet]="planet"></app-planet-info>
-</div>
+</app-card>

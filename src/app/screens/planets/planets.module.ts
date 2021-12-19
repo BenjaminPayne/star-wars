@@ -1,10 +1,12 @@
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { SharedModule } from '../../shared/shared.module';
 import { PersonInfoComponent } from './components/person-info/person-info.component';
 import { PersonOverviewComponent } from './components/person-overview/person-overview.component';
 import { PlanetInfoComponent } from './components/planet-info/planet-info.component';
 import { PlanetListComponent } from './components/planet-list/planet-list.component';
+import { PropertyDisplayComponent } from './components/property-display/property-display.component';
 import { PlanetComponent } from './pages/planet/planet.component';
 import { PlanetsComponent } from './pages/planets/planets.component';
 import { PersonPipe } from './pipes/person.pipe';
@@ -21,10 +23,12 @@ import { PlanetsRoutingModule } from './planets-routing.module';
     PersonOverviewComponent,
     PersonInfoComponent,
     PopulationPipe,
+    PropertyDisplayComponent,
   ],
   imports: [
     CommonModule,
-    PlanetsRoutingModule
+    PlanetsRoutingModule,
+    SharedModule
   ],
   providers: [
     DecimalPipe

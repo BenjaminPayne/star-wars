@@ -1,0 +1,13 @@
+@use "mixins";
+
+:host {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  @include mixins.elevation-1;
+
+  &:hover {
+    @include mixins.elevation-2;
+    transform: translateY(-0.5em);
+  }
+}
