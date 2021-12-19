@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { Planet } from '../../../../core/models/planet.model';
-import { SwapiService } from '../../../../core/swapi.service';
+import { StarWarsApiService } from '../../../../core/starwarsapi.service';
 import { Paged } from '../../../../core/models/paged.model';
 
 @Component({
@@ -18,7 +18,7 @@ export class PlanetsComponent implements OnInit {
   constructor(
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute,
-    private readonly starwars: SwapiService
+    private readonly starwars: StarWarsApiService
   ) {
     this.pagedPlanets$ = this.starwars.listPlanets();
   }

@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, of, Subject, switchMap, takeUntil } from 'rxjs';
 
 import { Planet } from '../../../../core/models/planet.model';
-import { SwapiService } from '../../../../core/swapi.service';
-import { Person } from '../../../../core/models/people.model';
+import { StarWarsApiService } from '../../../../core/starwarsapi.service';
+import { Person } from '../../../../core/models/person.model';
 
 @Component({
   templateUrl: './planet.component.html',
@@ -19,7 +19,7 @@ export class PlanetComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly route: ActivatedRoute,
-    readonly starwars: SwapiService,
+    readonly starwars: StarWarsApiService,
   ) {
     this.planet$ = this.route.paramMap.pipe(
       takeUntil(this.destroy$),

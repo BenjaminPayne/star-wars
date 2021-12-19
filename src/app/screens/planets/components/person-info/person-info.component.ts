@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { Person } from '../../../../core/models/people.model';
+import { Person } from '../../../../core/models/person.model';
 
 @Component({
   selector: 'app-person-info',

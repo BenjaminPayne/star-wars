@@ -4,14 +4,14 @@ import { Observable, switchMap } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { Paged } from './models/paged.model';
-import { Person } from './models/people.model';
+import { Person } from './models/person.model';
 import { Planet } from './models/planet.model';
 import { ApiRoot } from './models/root.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SwapiService {
+export class StarWarsApiService {
 
   private readonly apiRoot$: Observable<ApiRoot>;
 

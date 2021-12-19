@@ -1,4 +1,4 @@
-<h1> Star Wars Planets </h1>
+<h1 class="title"> Star Wars Planets </h1>
 
 <ng-container *ngIf="(pagedPlanets$ | async) as pagedPlanets; else loading">
   <app-planet-list [planets]="pagedPlanets.results" (selected)="navigateTo($event)"></app-planet-list>
