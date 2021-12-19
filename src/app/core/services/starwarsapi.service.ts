@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, switchMap } from 'rxjs';
+import { Observable, shareReplay, switchMap } from 'rxjs';
 
-import { environment } from '../../environments/environment';
-import { Paged } from './models/paged.model';
-import { Person } from './models/person.model';
-import { Planet } from './models/planet.model';
-import { ApiRoot } from './models/root.model';
+import { environment } from '../../../environments/environment';
+import { Paged } from '../models/paged.model';
+import { Person } from '../models/person.model';
+import { Planet } from '../models/planet.model';
+import { ApiRoot } from '../models/root.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class StarWarsApiService {
   private readonly rootUrl = environment.baseStarWarsApiUrl
 
   constructor(private readonly httpClient: HttpClient) {
-    this.apiRoot$ = this.httpClient.get<ApiRoot>(this.rootUrl);
+    this.apiRoot$ = this.httpClient.get<ApiRoot>(this.rootUrl).pipe(shareReplay(1));
   }
 
   listPlanets(): Observable<Paged<Planet>> {

@@ -6,7 +6,6 @@ import { PersonInfoComponent } from './components/person-info/person-info.compon
 import { PersonOverviewComponent } from './components/person-overview/person-overview.component';
 import { PlanetInfoComponent } from './components/planet-info/planet-info.component';
 import { PlanetListComponent } from './components/planet-list/planet-list.component';
-import { PropertyDisplayComponent } from './components/property-display/property-display.component';
 import { PlanetComponent } from './pages/planet/planet.component';
 import { PlanetsComponent } from './pages/planets/planets.component';
 import { PersonPipe } from './pipes/person.pipe';
@@ -23,7 +22,6 @@ import { PlanetsRoutingModule } from './planets-routing.module';
     PersonOverviewComponent,
     PersonInfoComponent,
     PopulationPipe,
-    PropertyDisplayComponent,
   ],
   imports: [
     CommonModule,

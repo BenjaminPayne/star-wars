@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, of, Subject, switchMap, takeUntil } from 'rxjs';
 
 import { Planet } from '../../../../core/models/planet.model';
-import { StarWarsApiService } from '../../../../core/starwarsapi.service';
+import { StarWarsApiService } from '../../../../core/services/starwarsapi.service';
 import { Person } from '../../../../core/models/person.model';
 
 @Component({

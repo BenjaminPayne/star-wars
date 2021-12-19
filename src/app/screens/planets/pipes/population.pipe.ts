@@ -9,7 +9,7 @@ export class PopulationPipe implements PipeTransform {
   constructor(private decimalPipe: DecimalPipe) {
   }
 
-  transform(value: any, digits?: any): any {
+  transform(value: any, digits?: any): string {
     const population = this.decimalPipe.transform(value / 1000000, digits)
     if (population != null) {
       return population;

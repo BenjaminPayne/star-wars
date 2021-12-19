@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { Planet } from '../../../../core/models/planet.model';
-import { StarWarsApiService } from '../../../../core/starwarsapi.service';
+import { StarWarsApiService } from '../../../../core/services/starwarsapi.service';
 import { Paged } from '../../../../core/models/paged.model';
 
 @Component({

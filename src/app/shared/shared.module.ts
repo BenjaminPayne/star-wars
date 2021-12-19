@@ -1,15 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
 import { CardComponent } from './components/card/card.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PropertyDisplayComponent } from './components/property-display/property-display.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    CardComponent
+    CardComponent,
+    PropertyDisplayComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +20,8 @@ import { CardComponent } from './components/card/card.component';
   ],
   exports: [
     NavbarComponent,
-    CardComponent
+    CardComponent,
+    PropertyDisplayComponent
   ]
 })
 export class SharedModule { }
