@@ -10,14 +10,10 @@ import { Person } from '../../../../core/models/person.model';
 export class PersonOverviewComponent implements OnInit {
 
   @Input() person!: Person;
-  @Output() selected = new EventEmitter<Person>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  select(): void {
-    this.selected.emit(this.person);
-  }
 }

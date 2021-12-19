@@ -24,25 +24,26 @@
 
     <div *ngIf="planet.residents.length > 0">
       <h2 class="details__title">Residents</h2>
-      <div class="list">
-        <ng-container *ngFor="let residentUrl of planet.residents">
-          <ng-container *ngIf="residentUrl | person | async as person; else loadingPerson">
-            <app-card>
-              <app-person-overview class="person-overview" [person]="person" (selected)="showPersonDetails($event)">
-              </app-person-overview>
-            </app-card>
+      <div class="residents">
+        <div class="list">
+          <ng-container *ngFor="let residentUrl of planet.residents">
+            <ng-container *ngIf="residentUrl | person | async as person; else loadingPerson">
+              <app-card (click)="showPersonDetails(person)">
+                <app-person-overview class="person-overview" [person]="person">
+                </app-person-overview>
+              </app-card>
+            </ng-container>
           </ng-container>
-        </ng-container>
+        </div>
+        <div *ngIf="detailedPerson$ | async as person">
+          <app-person-info class="residents__detailed" [person]="person"></app-person-info>
+        </div>
       </div>
     </div>
 
   </div>
 
 </ng-container>
-
-<div *ngIf="detailedPerson$ | async as person">
-  <app-person-info [person]="person"></app-person-info>
-</div>
 
 <ng-template #loadingPlanet>
   <h1 class="title"> Star Wars Planets </h1>
