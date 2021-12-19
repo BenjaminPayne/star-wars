@@ -1,5 +1,6 @@
 :host {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  column-gap: 4em;
+  row-gap: 1em;
 }

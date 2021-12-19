@@ -1,7 +1,9 @@
+@use 'colours';
+
 :host {
   display: flex;
   padding: 0 7em;
-  background-color: black;
+  background-color: colours.$theme-main;
   color: white;
 }
 
@@ -11,6 +13,12 @@
 
   &__button {
     cursor: pointer;
-    padding: 1em;
+    padding: 1em 2em;
+
+    &:hover {
+      background-color: colours.$theme-accent;
+    }
   }
+
+
 }
