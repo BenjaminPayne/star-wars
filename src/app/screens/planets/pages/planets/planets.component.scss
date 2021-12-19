@@ -1,5 +1,12 @@
-@use 'colours';
+@use 'mixins';
 
 .title {
-  color: colours.$theme-main;
+  @include mixins.title
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }

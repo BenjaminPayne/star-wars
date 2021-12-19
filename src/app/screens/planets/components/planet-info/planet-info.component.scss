@@ -1,5 +1,45 @@
+@use "colours";
+@use "mixins";
+
 :host {
   display: flex;
   flex-direction: column;
-  border: solid;
+  padding: 1em;
+  background-color: colours.$white;
+}
+
+.placeholder {
+  background-color: grey;
+  height: 200px;
+  width: 100%;
+}
+
+.title {
+  @include mixins.title;
+}
+
+.information {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__key {
+    color: colours.$text-sub;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__value {
+    color: colours.$text-main;
+    font-size: 1.2em;
+  }
 }

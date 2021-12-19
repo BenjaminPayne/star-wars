@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { PersonInfoComponent } from './components/person-info/person-info.component';
@@ -8,6 +8,7 @@ import { PlanetListComponent } from './components/planet-list/planet-list.compon
 import { PlanetComponent } from './pages/planet/planet.component';
 import { PlanetsComponent } from './pages/planets/planets.component';
 import { PersonPipe } from './pipes/person.pipe';
+import { PopulationPipe } from './pipes/population.pipe';
 import { PlanetsRoutingModule } from './planets-routing.module';
 
 @NgModule({
@@ -19,10 +20,14 @@ import { PlanetsRoutingModule } from './planets-routing.module';
     PersonPipe,
     PersonOverviewComponent,
     PersonInfoComponent,
+    PopulationPipe,
   ],
   imports: [
     CommonModule,
     PlanetsRoutingModule
+  ],
+  providers: [
+    DecimalPipe
   ]
 })
 export class PlanetsModule { }
