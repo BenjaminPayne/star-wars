@@ -5,9 +5,9 @@
   </div>
   <h1 class="title"> {{planet.name}}</h1>
 
-  <div class="details">
+  <section class="details">
 
-    <div>
+    <section>
       <h2 class="details__title">Planet Details</h2>
       <div class="list">
         <app-property-display description='Rotation Period' [value]="planet.rotation_period"></app-property-display>
@@ -20,9 +20,9 @@
         <app-property-display description='Population (m)' [value]="planet.population | population">
         </app-property-display>
       </div>
-    </div>
+    </section>
 
-    <div *ngIf="planet.residents.length > 0">
+    <section *ngIf="planet.residents.length > 0">
       <h2 class="details__title">Residents</h2>
       <div class="residents">
         <div class="list">
@@ -39,9 +39,9 @@
           <app-person-info class="residents__detailed" [person]="person"></app-person-info>
         </div>
       </div>
-    </div>
+    </section>
 
-  </div>
+  </section>
 
 </ng-container>
 
