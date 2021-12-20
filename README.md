@@ -40,13 +40,15 @@ This works best with Chrome installed on your machine, but it's not a requiremen
 
 Early on I knew I wanted to split the planet list and planet detail aspect of this task into the routes `/planets` and `/planets/:id`
 
-This would allow me to decouple the list of planets from the detail of an individual planet. 
+This would allow me to decouple the list of planets from the detail of an individual planet.
 
-A problem arose when trying to query a planet by identifier. The `planet` response from the `api/planets` endpoint didn't include an reference to a "planet identifier". 
+Originally I was planning on having the name of the planet be the `:id` in the route e.g. `localhost:4200/planets/tatooine`, but the API only supported retrieving planets via an arbitrary number field, e.g. `/api/planets/1`
 
-An simplified response from `api/planets` looked as such:
+A simplified response from `api/planets` looked as such:
 
 ```
+// GET /api/planets
+
 {
   ...
   results": [
@@ -79,9 +81,13 @@ An simplified response from `api/planets` looked as such:
 }
 ```
 
+As this response lacked the numerical identifier field as a property, it was hard for me to construct a URL to query a specific planet for.
+
 I resolved this issue by doing some string manipulation of the `url` property in order to derive the correct identifier.
 
-Ideally it would have been a better solution to provide a planet identifier in this response object.
+This allowed the component at the `planets/:id` route to query the API for a response on initialisation.
+
+Ideally this identifier would have been provided in the planet response object.
 
 
 ## Design Decisions
