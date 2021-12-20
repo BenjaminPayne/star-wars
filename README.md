@@ -100,12 +100,12 @@ I've split the project into the following seperate sections:
 
 This is to aid in the management of angular components and modules.
 
-**Core** is designed to hold various application wide services or models that are only to be defined once. For example, the API service and the various response models defined within the core module.
+_**Core**_ is designed to hold various application wide services or models that are only to be defined once. For example, the API service and the various response models are defined within this module.
 
-**Screens** is designed to contain the various different sections of the application. If we were to introduce a `Vehicles` section within the application, then it would exists along side the `Planets` section.
+_**Screens**_ is designed to contain the various different sections of the application. If we were to introduce a `Vehicles` section within the application, then it would exists along side the `Planets` section.
 The aim is to allow for the lazy loading of modules, components and routes, as well allowing the grouping of specific components and services that pertain to only that section.
 
-**Shared** is designed to hold components that may be common between each of the various screens.
+_**Shared**_ is designed to hold components that may be common between each of the various screens.
 
 ## Future Improvements
 
